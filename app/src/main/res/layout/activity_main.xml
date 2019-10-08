@@ -6,24 +6,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center_vertical"
+    android:layout_gravity="fill_vertical"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/dice_image"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/ipAddress_editText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        app:srcCompat="@drawable/empty_dice"
-        tools:src="@drawable/dice_1"/>
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Ip-Address" />
+
+    <EditText
+        android:id="@+id/port_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter Port number"
+        android:text="50002"/>
+
+    <EditText
+        android:id="@+id/message_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Enter Message" />
+
 
     <Button
         android:id="@+id/roll_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="@string/roll"/>
+        android:text="send Message"/>
 
 
 
