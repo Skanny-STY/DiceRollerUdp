@@ -13,6 +13,7 @@ import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
 import java.nio.ByteBuffer
+import java.nio.charset.Charset
 import kotlin.random.Random
 
 @ExperimentalStdlibApi
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener {
             //            Toast.makeText(this,"Button clicked",Toast.LENGTH_SHORT).show()
             // rollDice()
-            sendStringThroughUdp("Geh Durch mann! schalalal")
+            sendStringThroughUdp("Geh Durch mann!")
 
 
         }
@@ -70,11 +71,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        val buffer = ByteArray(50000)
-        val datagramRecPacket = DatagramPacket(buffer,0,buffer.size)
+        val buffer = ByteArray(300000)
+        val datagramRecPacket = DatagramPacket(buffer,0, buffer.size)
         datagramSocket.receive(datagramRecPacket)
 
-        val messageString = datagramRecPacket.data.decodeToString()
+        val messageString =  String(datagramPacket.data, datagramPacket.offset, datagramPacket.length)
 
         println("received message:  $messageString")
 
